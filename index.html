@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CVSim · Simulation of voltammograms and electrochemical mechanisms</title>
+<meta name="description" content="CVSim is free academic software that simulates voltammograms and electrochemical mechanisms: diffusion, electron transfer, coupled chemistry, adsorption, thin layers, spectroelectrochemistry. Windows and Linux.">
+<link rel="alternate" hreflang="en" href="./">
+<link rel="alternate" hreflang="fr" href="fr/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="lab" href="https://moltech-anjou.univ-angers.fr/en/research/team-voltedge.html">MOLTECH Anjou, UMR 6200 CNRS, University of Angers</a>
+  <nav class="lang" aria-label="Language">
+    <span aria-current="page">English</span>
+    <a href="fr/" hreflang="fr" lang="fr">Français</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div>
+      <h1>CVSim</h1>
+      <p class="tagline">Simulation of voltammograms and electrochemical mechanisms</p>
+      <p class="platform">Free academic software for Windows and Linux. No MATLAB licence required.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:echem-tools@univ-angers.fr?subject=CVSim%20request">Request CVSim</a>
+        <a class="btn btn-secondary" href="https://uabox.univ-angers.fr/s/JEEEbe2ZSLbXmXr/download?path=%2F&amp;files=CVSim_Leaflet_EN.pdf">Download the leaflet (PDF)</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="images/hero-cv.svg" width="640" height="320" alt="Cyclic voltammograms of a reversible couple at five scan rates">
+      <figcaption>Illustration: a reversible couple at five scan rates.</figcaption>
+    </figure>
+  </section>
+
+  <section class="board" aria-label="Mechanisms as written on the board">
+    <div class="board-inner">
+      <p class="equations">A + e = B<br>B + C = A + D</p>
+      <p class="lead">CVSim computes the electrochemical response of a mechanism written as one writes it on the board. Diffusion, electron transfer, solution chemistry, adsorption, ohmic drop and double-layer capacitance are solved together, on a space grid placed automatically.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="prose">
+        <h2>Telling mechanisms apart</h2>
+        <p>A single voltammogram can be reproduced by more than one mechanism. CVSim is built to tell them apart: it computes series (scan rate, concentration, rate constant…) and sets them against the same series measured.</p>
+        <h3>In practice</h3>
+        <ul class="plain">
+          <li>mechanism typed as free text, units checked, equilibrium constants derived from thermodynamic cycles</li>
+          <li>impossible values refused, unusual ones flagged</li>
+          <li>current, concentration profiles and surface concentrations at every instant</li>
+          <li>every result exported as a text file, with a picture of the window</li>
+        </ul>
+      </div>
+      <figure class="fig" data-file="images/fig1-scan-rates.png">
+        <img src="images/fig1-scan-rates.png" alt="Voltammograms of a fast couple at five scan rates and the peak currents plotted against the square root of the scan rate" loading="lazy">
+        <figcaption>Fast couple (<i>k</i><sup>0</sup> = 1 cm/s), five scan rates from 0.02 to 0.5 V/s: voltammograms and the lines <i>I</i><sub>p</sub> = f(<i>v</i><sup>1/2</sup>) drawn by the Series window.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="capabilities">
+    <h2 id="capabilities">What CVSim simulates</h2>
+    <div class="columns">
+      <div>
+        <h3>Mechanisms</h3>
+        <ul class="plain">
+          <li>Butler-Volmer or Marcus-Hush-Chidsey electron transfer</li>
+          <li>concerted transfers between solution and surface</li>
+          <li>first- and second-order coupled chemistry: catalysis, dimerisation, disproportionation</li>
+          <li>adsorbed species: Langmuir and Frumkin isotherms, Laviron interactions</li>
+          <li>mixed steps between a dissolved and an adsorbed species</li>
+          <li>electrochemiluminescence: excited states, emission yield, photons per electron</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Electrodes and cells</h3>
+        <ul class="plain">
+          <li>planar, spherical, hemispherical or cylindrical electrode, down to microelectrodes at steady state</li>
+          <li>semi-infinite diffusion, stagnant layer, closed thin layer, rotating disk</li>
+          <li>uncompensated resistance and double-layer capacitance</li>
+          <li>initial state as entered or brought to equilibrium</li>
+          <li>thermodynamic limit for fast equilibria</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Techniques</h3>
+        <ul class="plain">
+          <li>cyclic and linear sweep voltammetry</li>
+          <li>single and double potential step</li>
+          <li>square wave voltammetry</li>
+          <li>differential pulse voltammetry</li>
+          <li>ac voltammetry and its harmonics</li>
+          <li>impedance spectroscopy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="prose">
+      <h2>Analysing, and comparing with measurements</h2>
+      <ul class="plain">
+        <li><strong>Series over any parameter</strong>, with their derived quantities: <i>I</i><sub>p</sub> against <i>v</i><sup>1/2</sup> or <i>v</i>, log <i>I</i><sub>p</sub> against log <i>v</i>, <i>E</i><sub>p</sub> and Δ<i>E</i><sub>p</sub>, Nicholson’s peak ratio, Nicholson’s ψ and <i>k</i><sup>0</sup>, convolution and deconvolution, Levich plateaux and the Koutecký-Levich line.</li>
+        <li><strong>Measurements overlaid</strong>: BioLogic EC-Lab, CH Instruments and Metrohm Autolab files, or plain columns of numbers. The same quantities are taken from measurements and simulations, and the gap between the two families is quantified.</li>
+        <li><strong>A mechanism kept on screen</strong>: a frozen series stays as the reference while a constant or a step is changed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="prose">
+        <h2>Spectroelectrochemistry</h2>
+        <p>In a thin layer or a stagnant layer, CVSim gives the mean concentration of each species over the thickness of the layer, and its time derivative. These are what the absorbance, or its derivative, follows in spectroelectrochemistry: the simulation compares directly with the optical measurement.</p>
+      </div>
+      <figure class="fig" data-file="images/fig2-stagnant-layer.png">
+        <img src="images/fig2-stagnant-layer.png" alt="Time derivative of the mean concentrations of A, B and C over a 200 micrometre stagnant layer" loading="lazy">
+        <figcaption>Stagnant layer of 200 μm, A + e = B followed by B → C (<i>k</i> = 0.05 s<sup>−1</sup>), 10 mV/s: derivative of the mean concentration of A, B and C over the layer.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="prose">
+        <h2>Validated</h2>
+        <p>Every version passes more than 500 automated checks. Currents are compared with closed-form solutions: Randles-Ševčík, Cottrell, Laviron, thin layer, Levich plateau, Randles impedance, square wave and differential pulse. Conservation of matter and charge is checked every time.</p>
+      </div>
+      <div class="prose">
+        <h2>Numerical method</h2>
+        <p>Finite differences on an expanding grid, sized automatically from the problem; second-order implicit scheme (BDF2); Newton’s method on the coupled system, sparse factorisation. The Refine command measures how far the curve moves when the grid is refined.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="stack">
+      <div class="prose">
+        <h2>Getting started</h2>
+        <ul class="plain">
+          <li>twenty-three example studies shipped with the program, one per capability, each saying what to look at</li>
+          <li>a user guide in French and English: every window and every control, the physical model, the numerical method, the references</li>
+          <li>interface in English</li>
+        </ul>
+      </div>
+      <figure class="fig" data-file="images/cvsim-window.png">
+        <img src="images/cvsim-window.png" alt="The main window of CVSim" loading="lazy">
+        <figcaption>The main window after a computation, on example CVSim_07: an ECE mechanism with disproportionation, A + e = B, C + e = D, B = C and B + C = A + D.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="obtain">
+    <div class="split">
+      <div>
+        <h2>Obtaining CVSim</h2>
+        <div class="panel">
+          <p>CVSim is free of charge. It is distributed under the <a href="https://cecill.info/licences/Licence_CeCILL-B_V1-en.html">CeCILL-B licence</a>, as 64-bit Windows and Linux executables that need only the free <a href="https://www.mathworks.com/products/compiler/matlab-runtime.html">MATLAB Runtime</a>: no MATLAB licence is required. The source code is available on request.</p>
+          <p class="warranty">CVSim comes with absolutely NO WARRANTY.</p>
+          <p>To obtain CVSim, write to the developers at <a href="mailto:echem-tools@univ-angers.fr?subject=CVSim%20request">echem-tools@univ-angers.fr</a>.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Acknowledging CVSim</h2>
+        <div class="panel">
+          <p>If CVSim contributes to a publication, a thesis or a funded project (ANR, ERC, a European programme…), the authors would be grateful for a mention, for instance in the acknowledgements:</p>
+          <blockquote class="cite" id="cite-text">Simulations were carried out with CVSim (O. Alévêque and E. Levillain, MOLTECH Anjou, UMR 6200 CNRS, University of Angers), free software available on request from echem-tools@univ-angers.fr.</blockquote>
+          <button class="copy" type="button" data-target="cite-text" data-done="Copied">Copy the sentence</button><span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Olivier Alévêque and Eric Levillain, <a href="https://moltech-anjou.univ-angers.fr/en/research/team-voltedge.html">VoltEdge team</a>, MOLTECH Anjou, UMR 6200 CNRS, University of Angers</p>
+    <p><a href="mailto:echem-tools@univ-angers.fr">echem-tools@univ-angers.fr</a></p>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

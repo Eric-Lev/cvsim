@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CVSim · Simulation de voltammogrammes et de mécanismes électrochimiques</title>
+<meta name="description" content="CVSim est un logiciel académique libre et gratuit qui simule voltammogrammes et mécanismes électrochimiques : diffusion, transfert d'électron, chimie couplée, adsorption, couche mince, spectroélectrochimie. Windows et Linux.">
+<link rel="alternate" hreflang="fr" href="./">
+<link rel="alternate" hreflang="en" href="../">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="lab" href="https://moltech-anjou.univ-angers.fr/fr/recherche/equipe-voltedge.html">MOLTECH Anjou, UMR 6200 CNRS, Université d’Angers</a>
+  <nav class="lang" aria-label="Langue">
+    <a href="../" hreflang="en" lang="en">English</a>
+    <span aria-current="page">Français</span>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div>
+      <h1>CVSim</h1>
+      <p class="tagline">Simulation de voltammogrammes et de mécanismes électrochimiques</p>
+      <p class="platform">Logiciel académique libre et gratuit, pour Windows et Linux. Aucune licence MATLAB n’est nécessaire.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:echem-tools@univ-angers.fr?subject=Demande%20CVSim">Demander CVSim</a>
+        <a class="btn btn-secondary" href="https://uabox.univ-angers.fr/s/JEEEbe2ZSLbXmXr/download?path=%2F&amp;files=CVSim_Plaquette_FR.pdf">Télécharger la plaquette (PDF)</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="../images/hero-cv.svg" width="640" height="320" alt="Voltammogrammes cycliques d’un couple réversible à cinq vitesses de balayage">
+      <figcaption>Illustration&nbsp;: un couple réversible à cinq vitesses de balayage.</figcaption>
+    </figure>
+  </section>
+
+  <section class="board" aria-label="Les mécanismes, écrits comme au tableau">
+    <div class="board-inner">
+      <p class="equations">A + e = B<br>B + C = A + D</p>
+      <p class="lead">CVSim calcule la réponse électrochimique d’un mécanisme écrit tel qu’on l’écrit au tableau. Transport par diffusion, transferts d’électron, chimie en solution, adsorption, chute ohmique et capacité de double couche sont résolus ensemble, sur une grille d’espace placée automatiquement.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="prose">
+        <h2>Distinguer les mécanismes</h2>
+        <p>Un voltammogramme isolé peut être reproduit par plusieurs mécanismes. CVSim est construit pour en distinguer un&nbsp;: il calcule des séries (vitesse de balayage, concentration, constante de vitesse…) et les confronte aux mêmes séries mesurées.</p>
+        <h3>En pratique</h3>
+        <ul class="plain">
+          <li>mécanisme saisi en texte libre, unités vérifiées, constantes d’équilibre déduites des cycles thermodynamiques</li>
+          <li>valeurs impossibles refusées, valeurs inhabituelles signalées</li>
+          <li>courant, profils de concentration et concentrations de surface à chaque instant</li>
+          <li>tous les résultats exportés en fichiers texte, avec une image de la fenêtre</li>
+        </ul>
+      </div>
+      <figure class="fig" data-file="images/fig1-scan-rates.png">
+        <img src="../images/fig1-scan-rates.png" alt="Voltammogrammes d’un couple rapide à cinq vitesses de balayage et courants de pic tracés en fonction de la racine carrée de la vitesse" loading="lazy">
+        <figcaption>Couple rapide (<i>k</i><sup>0</sup> = 1 cm/s), cinq vitesses de 0,02 à 0,5 V/s&nbsp;: voltammogrammes et droites <i>I</i><sub>p</sub> = f(<i>v</i><sup>1/2</sup>) calculées par la fenêtre Series.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="possibilites">
+    <h2 id="possibilites">Ce que CVSim simule</h2>
+    <div class="columns">
+      <div>
+        <h3>Mécanismes</h3>
+        <ul class="plain">
+          <li>transferts d’électron de Butler-Volmer ou de Marcus-Hush-Chidsey</li>
+          <li>transferts concertés entre solution et surface</li>
+          <li>chimie couplée du premier et du second ordre&nbsp;: catalyse, dimérisation, dismutation</li>
+          <li>espèces adsorbées&nbsp;: isothermes de Langmuir et de Frumkin, interactions de Laviron</li>
+          <li>étapes mixtes entre une espèce dissoute et une espèce adsorbée</li>
+          <li>électrochimiluminescence&nbsp;: états excités, rendement d’émission, photons par électron</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Électrodes et cellules</h3>
+        <ul class="plain">
+          <li>électrode plane, sphérique, hémisphérique ou cylindrique, jusqu’aux microélectrodes en régime stationnaire</li>
+          <li>diffusion semi-infinie, couche stagnante, couche mince fermée, électrode tournante</li>
+          <li>résistance non compensée et capacité de double couche</li>
+          <li>état initial tel que saisi ou mis à l’équilibre</li>
+          <li>limite thermodynamique pour les équilibres rapides</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Techniques</h3>
+        <ul class="plain">
+          <li>voltammétrie cyclique et à balayage linéaire</li>
+          <li>saut et double saut de potentiel</li>
+          <li>voltammétrie à signaux carrés</li>
+          <li>voltammétrie impulsionnelle différentielle</li>
+          <li>voltammétrie alternative et ses harmoniques</li>
+          <li>spectroscopie d’impédance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="prose">
+      <h2>Analyser et confronter aux mesures</h2>
+      <ul class="plain">
+        <li><strong>Séries sur n’importe quel paramètre</strong>, avec leurs grandeurs dérivées&nbsp;: <i>I</i><sub>p</sub> contre <i>v</i><sup>1/2</sup> ou <i>v</i>, log <i>I</i><sub>p</sub> contre log <i>v</i>, <i>E</i><sub>p</sub> et Δ<i>E</i><sub>p</sub>, rapport des pics de Nicholson, ψ de Nicholson et <i>k</i><sup>0</sup>, convolution et déconvolution, plateaux de Levich et droite de Koutecký-Levich.</li>
+        <li><strong>Mesures superposées</strong>&nbsp;: fichiers BioLogic EC-Lab, CH Instruments, Metrohm Autolab ou simples colonnes de nombres. Les mêmes grandeurs sont extraites des mesures et des simulations, et l’écart entre les deux familles est chiffré.</li>
+        <li><strong>Un mécanisme gardé à l’écran</strong>&nbsp;: une série figée sert de référence pendant qu’on change une constante ou une étape.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="prose">
+        <h2>Spectroélectrochimie</h2>
+        <p>En couche mince ou en couche stagnante, CVSim donne la concentration moyenne de chaque espèce sur l’épaisseur de la couche, et sa dérivée par rapport au temps. Ce sont les grandeurs que suit l’absorbance, ou sa dérivée, en spectroélectrochimie&nbsp;: la simulation se compare directement à la mesure optique.</p>
+      </div>
+      <figure class="fig" data-file="images/fig2-stagnant-layer.png">
+        <img src="../images/fig2-stagnant-layer.png" alt="Dérivée des concentrations moyennes de A, B et C sur une couche stagnante de 200 micromètres" loading="lazy">
+        <figcaption>Couche stagnante de 200 μm, A + e = B suivi de B → C (<i>k</i> = 0,05 s<sup>−1</sup>), 10 mV/s&nbsp;: dérivée de la concentration moyenne de A, B et C sur la couche.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="prose">
+        <h2>Validé</h2>
+        <p>Chaque version passe plus de 500 contrôles automatiques. Les courants sont comparés aux solutions analytiques&nbsp;: Randles-Ševčík, Cottrell, Laviron, couche mince, plateau de Levich, impédance de Randles, signaux carrés et impulsions différentielles. La conservation de la matière et de la charge est vérifiée à chaque fois.</p>
+      </div>
+      <div class="prose">
+        <h2>Méthode numérique</h2>
+        <p>Différences finies sur une grille à pas croissant, dimensionnée automatiquement d’après le problème&nbsp;; schéma implicite du second ordre (BDF2)&nbsp;; méthode de Newton sur le système couplé, factorisation creuse. La commande Refine mesure de combien la courbe bouge quand la grille est affinée.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="stack">
+      <div class="prose">
+        <h2>Prise en main</h2>
+        <ul class="plain">
+          <li>vingt-trois études d’exemple livrées avec le logiciel, une par possibilité, chacune disant quoi regarder</li>
+          <li>un mode d’emploi en français et en anglais&nbsp;: chaque fenêtre et chaque contrôle, les fondements physiques du modèle, la méthode numérique, la bibliographie</li>
+          <li>interface en anglais</li>
+        </ul>
+      </div>
+      <figure class="fig" data-file="images/cvsim-window.png">
+        <img src="../images/cvsim-window.png" alt="La fenêtre principale de CVSim" loading="lazy">
+        <figcaption>La fenêtre principale après un calcul, sur l’exemple CVSim_07&nbsp;: un mécanisme ECE avec dismutation, A + e = B, C + e = D, B = C et B + C = A + D.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="obtenir">
+    <div class="split">
+      <div>
+        <h2>Obtenir CVSim</h2>
+        <div class="panel">
+          <p>CVSim est gratuit. Il est distribué sous <a href="https://cecill.info/licences/Licence_CeCILL-B_V1-fr.html">licence CeCILL-B</a>, en exécutables Windows et Linux 64&nbsp;bits qui ne demandent que le <a href="https://www.mathworks.com/products/compiler/matlab-runtime.html">MATLAB Runtime</a>, gratuit&nbsp;: aucune licence MATLAB n’est nécessaire. Le code source est communiqué sur demande.</p>
+          <p class="warranty">CVSim est fourni sans AUCUNE GARANTIE.</p>
+          <p>Pour obtenir CVSim, écrire aux développeurs à l’adresse <a href="mailto:echem-tools@univ-angers.fr?subject=Demande%20CVSim">echem-tools@univ-angers.fr</a>.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Citer CVSim</h2>
+        <div class="panel">
+          <p>Si CVSim contribue à une publication, à une thèse ou à un projet financé (ANR, ERC, programme européen…), les auteurs vous seraient reconnaissants de le mentionner, par exemple dans les remerciements&nbsp;:</p>
+          <blockquote class="cite" id="cite-text">Les simulations ont été réalisées avec CVSim (O. Alévêque et E. Levillain, MOLTECH Anjou, UMR 6200 CNRS, Université d’Angers), logiciel libre et gratuit disponible sur demande à echem-tools@univ-angers.fr.</blockquote>
+          <button class="copy" type="button" data-target="cite-text" data-done="Copié">Copier la phrase</button><span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Olivier Alévêque et Eric Levillain, <a href="https://moltech-anjou.univ-angers.fr/fr/recherche/equipe-voltedge.html">équipe VoltEdge</a>, MOLTECH Anjou, UMR 6200 CNRS, Université d’Angers</p>
+    <p><a href="mailto:echem-tools@univ-angers.fr">echem-tools@univ-angers.fr</a></p>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
