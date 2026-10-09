@@ -306,3 +306,5 @@ footer {
 /* Prose followed by a full-width figure (wide window captures) */
 .stack { display: grid; gap: clamp(20px, 3vw, 32px); }
 .stack figure.fig figcaption { max-width: 80ch; }
+
+.footer-inner .note { flex-basis: 100%; font-size: 0.85rem; }
